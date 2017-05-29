@@ -22,18 +22,19 @@ public class RemoteDroidServer {
 	private static String line;
 	private static boolean isConnected=true;
 	private static Robot robot;
-	private static final int SERVER_PORT = 8998;
+	private static final int SERVER_PORT = 6667;
+
  
 	public static void main(String[] args) {
 		boolean leftpressed=false;
 		boolean rightpressed=false;
+
  
 	    try{
 	    		robot = new Robot();
 			server = new ServerSocket(SERVER_PORT); //Create a server socket on port 8998
 			client = server.accept(); //Listens for a connection to be made to this socket and accepts it
 			in = new BufferedReader(new InputStreamReader(client.getInputStream())); //the input stream where data will come from client
-
 		}catch (IOException e) {
 			System.out.println("Error in opening Socket");
 			System.exit(-1);
@@ -47,7 +48,7 @@ public class RemoteDroidServer {
 	        try{
 			line = in.readLine(); //read input from client
 			System.out.println(line); //print whatever we get from client
-			//System.out.printn("connected");
+			
 			//if user clicks on next
 			if(line.equalsIgnoreCase("next")){
 				//Simulate press and release of key 'n'
@@ -65,6 +66,9 @@ public class RemoteDroidServer {
 				//Simulate press and release of spacebar
 				robot.keyPress(KeyEvent.VK_SPACE);
 				robot.keyRelease(KeyEvent.VK_SPACE);
+				if(Audio.getMasterOutputMute())
+				Audio.setMasterOutputMute(true);
+				else Audio.setMasterOutputVolume(0.0f);
 			}
 			//input will come in x,y format if user moves mouse on mousepad
 			else if(line.contains(",")){
@@ -88,7 +92,6 @@ public class RemoteDroidServer {
 				server.close();
 				client.close();
 			}
-
 	        } catch (IOException e) {
 				System.out.println("Read failed");
 				System.exit(-1);

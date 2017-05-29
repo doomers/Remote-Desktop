@@ -1,4 +1,4 @@
-package com.example.doomers.remotedesktop;
+package com.doomers.remotedesktop;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
