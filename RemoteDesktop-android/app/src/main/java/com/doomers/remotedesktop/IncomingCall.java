@@ -9,7 +9,9 @@ import android.util.Log;
 import android.widget.Toast;
 
 public class IncomingCall extends BroadcastReceiver {
-    public IncomingCall() {
+    Context context;
+    public IncomingCall(MainActivity context) {
+        this.context = (MainActivity)context;
     }
 
     @Override
@@ -34,6 +36,8 @@ public class IncomingCall extends BroadcastReceiver {
                         int duration = Toast.LENGTH_LONG;
                         Toast toast = Toast.makeText(context, msg, duration);
                         toast.show();
+                        MainActivity mainActivity = (MainActivity) context;
+                        mainActivity.incomingcall(incomingNumber);
 
                     }
                 }

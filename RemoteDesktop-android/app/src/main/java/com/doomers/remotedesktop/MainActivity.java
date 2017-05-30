@@ -1,6 +1,7 @@
 package com.doomers.remotedesktop;
 
 import android.content.Context;
+import android.content.IntentFilter;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.StrictMode;
@@ -63,6 +64,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //Get reference to the TextView acting as mousepad
         mousePad = (TextView) findViewById(R.id.mousePad);
 
+        IntentFilter filter = new IntentFilter("android.intent.action.PHONE_STATE");
+        IncomingCall incomingCall = new IncomingCall(this);
+        registerReceiver(incomingCall,filter);
+
         setUpMousePad();
 
         Sensey.getInstance().init(context);
@@ -120,7 +125,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (android.os.Build.VERSION.SDK_INT > 9) {
             StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
             StrictMode.setThreadPolicy(policy);
-
 
             //capture finger taps and movement on the textview
             mousePad.setOnTouchListener(new View.OnTouchListener() {
