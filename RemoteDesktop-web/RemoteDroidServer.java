@@ -22,7 +22,7 @@ public class RemoteDroidServer {
 	private static String line;
 	private static boolean isConnected=true;
 	private static Robot robot;
-	private static final int SERVER_PORT = 6667;
+	private static final int SERVER_PORT = 6665;
 
  
 	public static void main(String[] args) {

@@ -113,7 +113,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_connect) {
             ConnectPhoneTask connectPhoneTask = new ConnectPhoneTask();
-            connectPhoneTask.execute(getIP.toString()); //try to connect to server in another thread
+            connectPhoneTask.execute(getIP.getText().toString()); //try to connect to server in another thread
             return true;
         }
 

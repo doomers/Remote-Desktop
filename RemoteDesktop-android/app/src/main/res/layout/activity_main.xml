@@ -51,13 +51,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:ems="10"
-        android:inputType="numberDecimal"
-        android:selectAllOnFocus="false"
-        android:singleLine="true"
-        android:text="192.168.0.107"
-        tools:text="192.168.0.107" />
+        android:layout_alignParentTop="true" />
 
 
 </RelativeLayout>
