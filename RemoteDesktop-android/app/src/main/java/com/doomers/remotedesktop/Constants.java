@@ -5,7 +5,7 @@ package com.doomers.remotedesktop;
  */
 public class Constants {
 
-    public static final String SERVER_IP = "192.168.0.107";
+    // public static final String SERVER_IP = "192.168.0.107";
     public static final int SERVER_PORT = 6665;
     public static final String PLAY = "play";
     public static final String NEXT = "next";

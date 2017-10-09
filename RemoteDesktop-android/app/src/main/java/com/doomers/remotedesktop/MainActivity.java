@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -32,6 +33,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button nextButton;
     Button previousButton;
     TextView mousePad;
+    EditText getIP;
 
     private boolean isConnected = false;
     private boolean mouseMoved = false;
@@ -60,7 +62,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         playPauseButton.setOnClickListener(this);
         nextButton.setOnClickListener(this);
         previousButton.setOnClickListener(this);
-
+        //Get reference for EditText for the IP
+        getIP = (EditText) findViewById(R.id.getIP);
         //Get reference to the TextView acting as mousepad
         mousePad = (TextView) findViewById(R.id.mousePad);
 
@@ -110,7 +113,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_connect) {
             ConnectPhoneTask connectPhoneTask = new ConnectPhoneTask();
-            connectPhoneTask.execute(Constants.SERVER_IP); //try to connect to server in another thread
+            connectPhoneTask.execute(getIP.toString()); //try to connect to server in another thread
             return true;
         }
 
