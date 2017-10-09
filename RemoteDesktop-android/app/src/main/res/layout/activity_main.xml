@@ -10,12 +10,12 @@
     tools:context="com.doomers.remotedesktop.MainActivity">
 
     <TextView
+        android:id="@+id/mousePad"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="390dp"
         android:layout_above="@+id/playPauseButton"
-        android:clickable="true"
         android:background="@android:color/holo_blue_dark"
-        android:id="@+id/mousePad"/>
+        android:clickable="true" />
 
     <Button
         android:layout_width="wrap_content"
@@ -42,6 +42,22 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
+
+    <EditText
+        android:id="@+id/getIP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:selectAllOnFocus="false"
+        android:singleLine="true"
+        android:text="192.168.0.107"
+        tools:text="192.168.0.107" />
 
 
 </RelativeLayout>
