@@ -20,7 +20,9 @@ Screenshots
 Getting Started
 ---------------
 
-TODO
+Contains two main folders:
+- RemoteDesktop-android: Contains the android application
+- RemoteDesktop-web: Application to be run on the PC
 
 Support
 -------
@@ -30,6 +32,10 @@ https://github.com/doomers/Remote-Desktop/issues
 
 Patches are encouraged, and may be submitted by forking this project and
 submitting a pull request through GitHub. Please see CONTRIBUTING.md for more details.
+
+Contributors
+------------
+- magrandera
 
 License
 -------
